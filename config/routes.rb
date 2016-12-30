@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users, skip: [:sessions]
+  devise_for :users, skip: [:sessions, :registrations]
 
   as :user do
     post '/api/login' => 'sessions#create'
-  end
-  
-  namespace :api do
+    delete '/api/logout' => 'sessions#logout'
+    post '/api/create/user' => 'users#create'
 
   end
+   
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

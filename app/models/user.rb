@@ -3,4 +3,15 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+         def ensure_authtoken
+         	self.auth_token = generate_token
+         	self.save!
+         	self.auth_token
+         end
+
+         private
+         def generate_token
+         	Devise.friendly_token	
+         end
 end
