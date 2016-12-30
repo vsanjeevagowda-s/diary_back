@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
-  namespace :api, default: {format: :json} do
+  devise_for :users, skip: [:sessions]
 
-    namespace :v1 do
-      
-    end
+  as :user do
+    post '/api/login' => 'sessions#create'
+  end
+  
+  namespace :api do
+
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
