@@ -5,9 +5,10 @@ Rails.application.routes.draw do
     post '/api/login' => 'sessions#create'
     delete '/api/logout' => 'sessions#logout'
     post '/api/create/user' => 'users#create'
-
   end
-   
+
+resources :records
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
