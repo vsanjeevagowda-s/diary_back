@@ -3,13 +3,14 @@ Rails.application.routes.draw do
 
   as :user do
     post '/api/login' => 'sessions#create'
-    delete '/api/logout' => 'sessions#logout'
+    post '/api/logout' => 'sessions#logout'
     post '/api/create/user' => 'users#create'
   end
 
 # resources :records
 
 post '/record/list' => 'records#index'
+post '/record/create' => 'records#create'
 
 
 
