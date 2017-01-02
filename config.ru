@@ -2,3 +2,30 @@
 
 require ::File.expand_path('../config/environment', __FILE__)
 run Rails.application
+use Rack::Cors do
+  allow do
+    origins '*'
+     resource '/api/*', :headers => :any, :methods => [:get, :post, :options, :put, :delete]
+    resource '/file/list_all/', :headers => 'x-domain-token'
+    resource '/file/at/*',
+        :methods => [:get, :post, :put, :delete, :options],
+        :headers => 'x-domain-token',
+        :expose  => ['Some-Custom-Response-Header'],
+        :max_age => 600
+        # headers to expose
+  end
+
+  allow do
+    origins '*'
+    resource '/public/*', :headers => :any, :methods => :get
+  end
+end
+
+require 'rack/cors'
+
+use Rack::Cors do
+  allow do
+    origins '*'
+    resource '/api/*', :headers => :any, :methods => [:get, :post, :options, :put, :delete]
+  end
+end

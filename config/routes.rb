@@ -7,7 +7,23 @@ Rails.application.routes.draw do
     post '/api/create/user' => 'users#create'
   end
 
-resources :records
+# resources :records
+
+post '/record/list' => 'records#index'
+
+
+
+       #     records GET    /records(.:format)             records#index
+
+       #             POST   /records(.:format)             records#create
+
+       #  new_record GET    /records/new(.:format)         records#new
+
+       # edit_record GET    /records/:id/edit(.:format)    records#edit
+
+       #      record GET    /records/:id(.:format)         records#show
+
+       #             PATCH  /records/:id(.:format)         records#update
 
 
   # The priority is based upon order of creation: first created -> highest priority.

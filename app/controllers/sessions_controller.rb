@@ -8,7 +8,8 @@ class SessionsController < Devise::SessionsController
 			token = user.ensure_authtoken
 			render json:{
 				message: "success",
-				auth_token: token
+				auth_token: token,
+				status: 200
 			}
 		else
 			render json:{
