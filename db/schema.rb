@@ -17,7 +17,19 @@ ActiveRecord::Schema.define(version: 20161230050320) do
   enable_extension "plpgsql"
 
   create_table "records", force: :cascade do |t|
-    t.string   "title"
+    t.string   "date"
+    t.string   "morning"
+    t.string   "afternoon"
+    t.string   "evening"
+    t.string   "night"
+    t.string   "sleep"
+    t.string   "water"
+    t.string   "exercise"
+    t.string   "bath"
+    t.string   "health"
+    t.string   "read"
+    t.string   "place"
+    t.string   "comments"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

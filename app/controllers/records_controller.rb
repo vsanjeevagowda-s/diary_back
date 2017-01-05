@@ -6,7 +6,8 @@ class RecordsController < ApplicationController
 			@record = current_user.records.last
 			render json:{
 				message: "success",
-				data: @record
+				data: @record,
+				status: 200
 			}
 		rescue
 			render json:{
@@ -71,6 +72,6 @@ class RecordsController < ApplicationController
 
 	private
 	def record_params
-		params.require("record").permit(:title)
+		params.require("record").permit(:morning, :date, :afternoon, :evening, :night, :place, :comments)
 	end
 end
