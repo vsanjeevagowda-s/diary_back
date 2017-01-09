@@ -12,6 +12,9 @@ Rails.application.routes.draw do
 post '/record/list' => 'records#index'
 post '/record/create' => 'records#create'
 
+post '/expense/create' => 'expenses#create'
+post '/expense/list' => 'expenses#todays_expense'
+
 
 
        #     records GET    /records(.:format)             records#index
