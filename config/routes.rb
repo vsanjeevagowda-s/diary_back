@@ -11,9 +11,11 @@ Rails.application.routes.draw do
 
 post '/record/list' => 'records#index'
 post '/record/create' => 'records#create'
+post '/record/today' => 'records#todays_record'
 
 post '/expense/create' => 'expenses#create'
 post '/expense/list' => 'expenses#todays_expense'
+post '/expense/delete' => 'expenses#delete'
 
 
 

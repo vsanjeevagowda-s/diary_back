@@ -18,7 +18,9 @@ ActiveRecord::Schema.define(version: 20170109013713) do
 
   create_table "expenses", force: :cascade do |t|
     t.string   "product"
-    t.string   "price"
+    t.float    "got"
+    t.float    "spent"
+    t.float    "change"
     t.string   "date"
     t.integer  "user_id"
     t.datetime "created_at", null: false
