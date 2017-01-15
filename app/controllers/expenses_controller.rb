@@ -59,6 +59,16 @@ class ExpensesController < ApplicationController
 		end
 	end
 
+
+	def index
+	@expenses = current_user.expenses.all
+		render json: {
+				message: "success",
+				allExpenses: @expenses,
+				status: 200
+			}
+	end
+
 	def delete
 		begin
 		current_user.expenses.find(params["expense_id"]).delete

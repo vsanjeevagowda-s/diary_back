@@ -16,6 +16,7 @@ post '/record/today' => 'records#todays_record'
 post '/expense/create' => 'expenses#create'
 post '/expense/list' => 'expenses#todays_expense'
 post '/expense/delete' => 'expenses#delete'
+post '/expense/all' => 'expenses#index'
 
 
 

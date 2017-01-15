@@ -85,6 +85,12 @@ class RecordsController < ApplicationController
 		end
 	end
 
+
+
+	def record_and_expense
+		
+	end
+
 	private
 	def record_params
 		params.require("record")[0].permit(:morning, :afternoon, :evening, :night, :place, :comments, :evening, :night, :sleep, :water, :exercise,:health, :bath, :read)
