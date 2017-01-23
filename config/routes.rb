@@ -17,6 +17,7 @@ post '/expense/create' => 'expenses#create'
 post '/expense/list' => 'expenses#todays_expense'
 post '/expense/delete' => 'expenses#delete'
 post '/expense/all' => 'expenses#index'
+post '/expense/day_expense' => 'expenses#day_expense'
 
 
 
